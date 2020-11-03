@@ -16,11 +16,14 @@ class CatsController < ApplicationController
         redirect_to cats_path
     end
 
-    def destroy 
-        @cat.destroy
-        redirect_to cats_path
+    def destroy
+        @cat = Cat.find(params[:id])
+        if @cat.present?
+          @cat.destroy
+        end
+        redirect_to root_url
     end
-
+    
 private
 
     def cat_params
