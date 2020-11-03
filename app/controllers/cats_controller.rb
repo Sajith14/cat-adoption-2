@@ -12,8 +12,13 @@ class CatsController < ApplicationController
     end
     
     def create
-      current_user.cats.create(cat_params) #this wont work until devise done
-      redirect_to cats_path
+        current_user.cats.create(cat_params) #this wont work until devise done
+        redirect_to cats_path
+    end
+
+    def destroy 
+        @cat.destroy
+        redirect_to cats_path
     end
 
 private

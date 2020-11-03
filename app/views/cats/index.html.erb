@@ -11,5 +11,8 @@
     <h3>Description: <%= cat.description %></h3>
     <h4>Created by <%= cat.user.email %></h4>
     <%= link_to "Show", cat_path(cat.id)  %>
+    <% if user_signed_in? && current_user.cats.include?(cat) %>
+      <%= link_to "Delete", cat_path(cat.id), method: :delete %>
+    <% end %>
   </div>
 <% end %>
