@@ -1,1 +1,15 @@
-<h1>Home</h1>
+<h2>Restaurants</h2>
+<%= link_to "Add a new cat", cats_path %>
+
+<% @cats.each do |cat| %>
+  <div>
+    <h3>Name: <%= cat.name %></h3>
+    <h3>Breed: <%= cat.breed %></h3>
+    <h3>Age: <%= cat.age %></h3>
+    <h3>Sex: <%= cat.sex %></h3>
+    <h3>Price: <%= cat.price %></h3>
+    <h3>Description: <%= cat.description %></h3>
+    <h4>Created by <%= cat.user.email %></h4>
+    <%= link_to "Show", cat_path(cat.id)  %>
+  </div>
+<% end %>
