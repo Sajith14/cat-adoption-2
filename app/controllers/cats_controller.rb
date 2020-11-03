@@ -1,5 +1,5 @@
 class CatsController < ApplicationController
-    before_action :authenticate_user!
+    before_action :authenticate_user!, except: [:index, :show]
     before_action :cat_params, only: [:create]
     before_action :set_cat, only: [:show]
 
