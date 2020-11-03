@@ -1,6 +1,7 @@
 class CatsController < ApplicationController
     before_action :authenticate_user!
     before_action :cat_params, only: [:create]
+    before_action :set_cat, only: [:show]
 
     def index
         @cats = Cat.all
@@ -15,7 +16,7 @@ class CatsController < ApplicationController
       redirect_to cats_path
     end
 
-    private
+private
 
     def cat_params
         params.require(:cat).permit(:name, :breed, :age, :sex, :price, :description)
