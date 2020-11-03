@@ -23,6 +23,12 @@
   <%= f.text_area :description, size: "20x6" %>
   <br>
   <br>
+  <br>
+  <br>
+  <%= f.label :picture %>
+  <%= f.file_field :picture, accept: ['image/png', 'image/jpg', 'image/jpeg'] %>
+  <br>
+  <br>
   <%= f.submit "Create" %>
 
 <% end %>
