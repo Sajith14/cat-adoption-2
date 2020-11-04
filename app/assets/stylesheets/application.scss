@@ -15,3 +15,14 @@
  */
 
  @import "bootstrap/scss/bootstrap";
+
+.navbar {
+    background-color: #e3f2fd;
+}
+
+.container {
+    h3 {
+        font-size: 40px
+        // font-family: 'Roboto', sans-serif;
+    }
+}
